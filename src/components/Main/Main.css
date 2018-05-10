@@ -1,7 +1,14 @@
+/*
+    The main contents is lowered to account for the size of a fixed header.
+ */
 .MainSegment {
     margin-top: 100px !important;
 }
 
+/*
+    The anchors for navigation links should be a short distance above
+    the actual content, to account for a fixed header, and for easier viewing.
+ */
 .ContentAnchor {
     display: block;
     position: relative;

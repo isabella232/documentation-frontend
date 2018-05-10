@@ -1,13 +1,19 @@
+// External libraries
 import * as React from "react";
 
-import "./Header.css";
-
+// Semantic-UI components
 import { Container, Header as SemanticHeader, Item, Menu } from "semantic-ui-react";
 
+// Components
 import GithubBadge from "./GithubBadge";
-
 import Logo from "./Logo";
 
+// Component-specific style
+import "./Header.css";
+
+/**
+ * A component that includes Dharma branding and high-level navigation.
+ */
 export default class Header extends React.Component<{}, {}> {
     public render() {
         return (

@@ -1,15 +1,23 @@
+// External libraries
 import * as _ from "lodash";
 import * as React from "react";
 
+// Semantic-UI components
 import { Segment } from "semantic-ui-react";
 
-import "./Main.css";
+// Components
 import Section from "./Section/Section";
+
+// Component-specific style
+import "./Main.css";
 
 interface Props {
     documentation: Documentation;
 }
 
+/**
+ * A component that renders the main contents of the documentation.
+ */
 export default class Main extends React.Component<Props, {}> {
     public render() {
         const { documentation } = this.props;
@@ -17,6 +25,7 @@ export default class Main extends React.Component<Props, {}> {
         return (
             <Segment basic className="MainSegment">
                 {
+                    // For each section, render a Section component with the relevant data.
                     _.map(documentation.sections, (section) => {
                         return <Section key={section.title} section={section}/>;
                     })

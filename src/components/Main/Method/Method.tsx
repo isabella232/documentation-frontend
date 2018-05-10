@@ -1,40 +1,23 @@
-import * as hljs from "highlight.js";
+// External libraries
 import * as React from "react";
 
-import "./Method.css";
+// Semantic-UI components
+import { Container, Header as SemanticHeader } from "semantic-ui-react";
 
+// Components
 import Signature from "./Signature";
 
+// Constants
 import { REPO_URL } from "../../../config/constants";
-
-import { Container, Header as SemanticHeader } from "semantic-ui-react";
 
 interface Props {
     method: MethodDocumentation;
 }
 
+/**
+ * A component that renders documentation for class methods.
+ */
 export default class Method extends React.Component<Props, {}> {
-    private readonly snippetRef: React.RefObject<any>;
-
-    constructor(props: Props) {
-        super(props);
-
-        this.snippetRef = React.createRef();
-    }
-
-    public componentDidMount() {
-        this.highlightCode();
-    }
-
-    public highlightCode() {
-        const node = this.snippetRef.current;
-
-        if (node) {
-            hljs.configure({ languages: ["typescript"] });
-            hljs.highlightBlock(node);
-        }
-    }
-
     public render() {
         const { method } = this.props;
 

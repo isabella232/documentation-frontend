@@ -1,8 +1,3 @@
-declare module "*.json" {
-    const value: SectionDocumentation[];
-    export default value;
-}
-
 interface Documentation {
     sections: SectionDocumentation[];
 }
@@ -32,18 +27,4 @@ interface MethodDocumentation {
     // The method's signature, in Typescript format,
     // e.g. "canReturnCollateral(agreementId: string): Promise<boolean>"
     signature: string;
-}
-
-interface SectionToTypedocClasses {
-    // E.g. { "adapters": [], "wrappers": [], ... }
-    [sectionName: string]: any[];
-}
-
-interface SignatureParameter {
-    name: string;
-    type: ParameterType;
-}
-
-interface ParameterType {
-    name: string;
 }

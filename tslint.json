@@ -9,7 +9,9 @@
   },
   "linterOptions": {
     "exclude": [
-      "config/**/*.js"
+      "config/**/*.js",
+      "config/**/*.js",
+      "src/assets/semantic-ui/js/*.js"
     ]
   }
 }

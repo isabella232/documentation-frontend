@@ -29295,10 +29295,10 @@ body.pushable > .pusher {
 *******************************/
 @font-face {
   font-family: "DIN";
-  src: url(../../../fonts/DIN.otf) format("opentype"); }
+  src: url(../../../../themes/dharma/assets/fonts/DIN.otf) format("opentype"); }
 @font-face {
   font-family: "Din Bold";
-  src: url(../../../fonts/DINBold.otf) format("opentype"); }
+  src: url(../../../../themes/dharma/assets/fonts/DINBold.otf) format("opentype"); }
 @font-face {
   font-family: "Din LightAlternate";
-  src: url(../../../fonts/DINLightAlternate.otf) format("opentype"); }
+  src: url(../../../../themes/dharma/assets/fonts/DINLightAlternate.otf) format("opentype"); }

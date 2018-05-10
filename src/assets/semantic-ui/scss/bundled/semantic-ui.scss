@@ -1,0 +1,20 @@
+@import "../globals/all";
+@import "../elements/all";
+@import "../collections/all";
+@import "../views/all";
+@import "../modules/all";
+
+@font-face {
+  font-family: "DIN";
+  src: url(../../../fonts/DIN.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Din Bold";
+  src: url(../../../fonts/DINBold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Din LightAlternate";
+  src: url(../../../fonts/DINLightAlternate.otf) format("opentype");
+}

@@ -7,11 +7,11 @@
 }
 
 .ui.vertical.menu .menu .item {
-    font-size: 1em;
+    font-size: 1em !important;
 }
 
 .header.SectionTitle {
-    text-transform: capitalize;
+    text-transform: capitalize !important;
 }
 
 .borderless.menu {

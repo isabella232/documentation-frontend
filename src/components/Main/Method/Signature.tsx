@@ -1,18 +1,24 @@
+// External libraries
 import * as hljs from "highlight.js";
 import * as React from "react";
 
+// Component-specific styling
 import "./Snippet.css";
 
 interface Props {
     code: string;
 }
 
+/**
+ * A component that renders a method's call signature as a code snippet.
+ */
 export default class Signature extends React.Component<Props, {}> {
     private readonly snippetRef: React.RefObject<any>;
 
     constructor(props: Props) {
         super(props);
 
+        // A reference to the code-snippet node, for code highlighting.
         this.snippetRef = React.createRef();
     }
 
