@@ -1,0 +1,11 @@
+.header.SectionTitle {
+    text-transform: capitalize;
+}
+
+ui.borderless.vertical.SectionClasses.menu {
+    border: 0;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}

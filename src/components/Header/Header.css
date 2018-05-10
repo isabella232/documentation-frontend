@@ -1,0 +1,10 @@
+.NavigationBrand {
+    padding-top: 4px !important;
+}
+
+.HeaderMenu {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}

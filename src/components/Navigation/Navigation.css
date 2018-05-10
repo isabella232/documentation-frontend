@@ -1,0 +1,37 @@
+.ui.menu.SidebarMenu {
+    border: 0;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.ui.vertical.menu .menu .item {
+    font-size: 1em;
+}
+
+.header.SectionTitle {
+    text-transform: capitalize;
+}
+
+.borderless.menu {
+    border: 0 !important;
+
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.accordion .title {
+    text-transform: capitalize;
+
+    font-size: 1.2em;
+}
+
+.SidebarMenu {
+    position: -webkit-sticky;
+    position: sticky;
+
+    top: 100px !important;
+    left: 20px !important;
+}
