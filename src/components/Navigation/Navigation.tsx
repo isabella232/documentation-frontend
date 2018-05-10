@@ -12,6 +12,11 @@ interface Props {
     visible: boolean;
 }
 
+/**
+ * A component that renders navigation for the given documentation data.
+ *
+ * TODO: Make a search filter.
+ */
 export default class Navigation extends React.Component<Props, {}> {
     public render() {
         const { documentation, visible } = this.props;
