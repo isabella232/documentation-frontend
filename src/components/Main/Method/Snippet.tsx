@@ -10,9 +10,9 @@ interface Props {
 }
 
 /**
- * A component that renders a method's call signature as a code snippet.
+ * A component that renders a method's code signature or example as a code snippet.
  */
-export default class Signature extends React.Component<Props, {}> {
+export default class Snippet extends React.Component<Props, {}> {
     private readonly snippetRef: React.RefObject<any>;
 
     constructor(props: Props) {

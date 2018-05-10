@@ -5,7 +5,8 @@ import * as React from "react";
 import { Container, Header as SemanticHeader } from "semantic-ui-react";
 
 // Components
-import Signature from "./Signature";
+import Example from "./Example";
+import Snippet from "./Snippet";
 
 // Constants
 import { REPO_URL } from "../../../config/constants";
@@ -31,7 +32,12 @@ export default class Method extends React.Component<Props, {}> {
 
                 <p>{method.description}</p>
 
-                <Signature code={method.signature}/>
+                <Snippet code={method.signature}/>
+
+                {
+                    // If the method has an example, render it as a snippet.
+                    method.example && <Example code={method.example}/>
+                }
 
                 <a href={`${REPO_URL}${method.source}`}>Source</a>
             </Container>

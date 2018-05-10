@@ -19,6 +19,8 @@ interface MethodDocumentation {
     name: string;
     // The description of the method, as provided in comments (doc block.)
     description: string;
+    // An example of how to use the method.
+    example: string;
     // The typescript-formatted parameters list, e.g. "agreementId: string".
     params: string;
     // The location of the method definition,
