@@ -3,6 +3,8 @@
  */
 .MainSegment {
     margin-top: 100px !important;
+
+    max-width: 823px;
 }
 
 /*

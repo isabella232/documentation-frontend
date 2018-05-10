@@ -9,25 +9,17 @@ import Classes from "./Classes";
 
 interface Props {
     documentation: Documentation;
-}
-
-interface State {
     visible: boolean;
 }
 
-export default class Navigation extends React.Component<Props, State> {
-    public state = { visible: true };
-
-    public toggleVisibility() {
-        this.setState({ visible: !this.state.visible });
-    }
-
+export default class Navigation extends React.Component<Props, {}> {
     public render() {
-        const { documentation } = this.props;
-        const { visible } = this.state;
+        const { documentation, visible } = this.props;
 
         const sections = documentation.sections;
 
+        // For each of the sections, create an accordion containing navigation for
+        // the relevant classes.
         const panels = _.map(sections, (section) => {
             return {
                 title: section.title,
@@ -40,19 +32,19 @@ export default class Navigation extends React.Component<Props, State> {
         });
 
         return (
-            <Sidebar as={Menu}
-                     className="SidebarMenu"
-                     animation="push"
-                     width="wide"
-                     visible={visible}
-                     vertical
-                     borderless={true}>
-                <Accordion
-                    exclusive={false}
-                    panels={panels}
-                    defaultActiveIndex={_.range(sections.length)}
-                    fluid />
-            </Sidebar>
+                <Sidebar as={Menu}
+                         className="SidebarMenu"
+                         animation="push"
+                         width="wide"
+                         visible={visible}
+                         vertical
+                         borderless={true}>
+                    <Accordion
+                        exclusive={false}
+                        panels={panels}
+                        defaultActiveIndex={_.range(sections.length)}
+                        fluid />
+                </Sidebar>
         );
     }
 }
