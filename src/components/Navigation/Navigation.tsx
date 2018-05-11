@@ -36,6 +36,21 @@ export default class Navigation extends React.Component<Props, {}> {
             };
         });
 
+        // Add each of the interfaces.
+        panels.push({
+            title: "Interfaces",
+            content: (
+                <Accordion.Content>
+                    {
+                        _.map(documentation.interfaces, (interfaceDoc) => {
+                            const { name } = interfaceDoc;
+                            return <Menu.Item><a href={`#${name}`}>{name}</a></Menu.Item>;
+                        })
+                    }
+                </Accordion.Content>
+            ),
+        });
+
         return (
                 <Sidebar as={Menu}
                          className="SidebarMenu"
@@ -47,7 +62,7 @@ export default class Navigation extends React.Component<Props, {}> {
                     <Accordion
                         exclusive={false}
                         panels={panels}
-                        defaultActiveIndex={_.range(sections.length)}
+                        defaultActiveIndex={_.range(sections.length + 1)}
                         fluid />
                 </Sidebar>
         );

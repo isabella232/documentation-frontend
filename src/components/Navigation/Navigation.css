@@ -6,6 +6,11 @@
     box-shadow: none;
 }
 
+.ui.menu.SidebarMenu::after {
+    /* Add some extra padding to the bottom of the sidebar, for readability. */
+    height: 120px;
+}
+
 .ui.vertical.menu .menu .item {
     font-size: 1em !important;
 }

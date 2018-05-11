@@ -30,7 +30,11 @@ export default class Method extends React.Component<Props, {}> {
 
                 <SemanticHeader>{name}</SemanticHeader>
 
-                <p>{method.description}</p>
+                {
+                    method.description && method.description.split("\n\n").map((line) => {
+                        return <p>{line}</p>;
+                    })
+                }
 
                 <Snippet code={method.signature}/>
 

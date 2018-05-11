@@ -1,5 +1,6 @@
 interface Documentation {
     sections: SectionDocumentation[];
+    interfaces: InterfaceDocumentation[];
 }
 
 interface SectionDocumentation {
@@ -29,4 +30,16 @@ interface MethodDocumentation {
     // The method's signature, in Typescript format,
     // e.g. "canReturnCollateral(agreementId: string): Promise<boolean>"
     signature: string;
+}
+
+interface InterfaceDocumentation {
+    id: number;
+    name: string;
+    kind: number;
+    kindString: string;
+    flags: any;
+    children: any[];
+    groups: any[];
+    sources: any[];
+    extendedTypes: any[];
 }
