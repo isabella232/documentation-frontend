@@ -37,7 +37,7 @@ export default class Class extends React.Component<Props, {}> {
                             <Container key={method.name}>
                                 <Method method={method}/>
 
-                                <Divider hidden />
+                                <Divider />
                             </Container>
                         );
                     })

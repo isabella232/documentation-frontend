@@ -11,7 +11,7 @@ import Section from "./Section/Section";
 // Component-specific style
 import "./Main.css";
 
-import Interface from "./Interfaces/Interface";
+import Interface from "./Interface/Interface";
 
 interface Props {
     documentation: Documentation;
@@ -29,7 +29,9 @@ export default class Main extends React.Component<Props, {}> {
                 {
                     // For each section, render a Section component with the relevant data.
                     _.map(documentation.sections, (section) => {
-                        return <Section key={section.title} section={section}/>;
+                        return <Section
+                            key={section.title}
+                            section={section}/>;
                     })
                 }
 

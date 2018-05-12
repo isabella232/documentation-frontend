@@ -16,12 +16,23 @@ interface Props {
  * A component that renders documentation for an interface.
  */
 export default class Interface extends React.Component<Props, {}> {
-    public interfaceParamString(interfaceDoc: any) {
+    public static interfaceParamString(interfaceDoc: any) {
         const isSimpleType = interfaceDoc.type && interfaceDoc.type.name;
+
         const isArray = !!interfaceDoc.elementType;
+
+        const isFunc = interfaceDoc.type &&
+            interfaceDoc.type.type &&
+            interfaceDoc.type.declaration;
+
         const type = isSimpleType
             ? interfaceDoc.type.name
-            : isArray ? `${interfaceDoc.elementType.name}[]` : "";
+            : isArray
+                ? `${interfaceDoc.elementType.name}[]`
+                : isFunc
+                    // TODO: Parse the function signature.
+                    ? "Function"
+                    : "";
 
         return `\t${interfaceDoc.name}: ${type};\n`;
     }
@@ -29,7 +40,7 @@ export default class Interface extends React.Component<Props, {}> {
     public interfaceAsCode() {
         const { interfaceDoc } = this.props;
 
-        return "{\n" + _.map(interfaceDoc.children, this.interfaceParamString).join("\n") + "}\n";
+        return "{\n" + _.map(interfaceDoc.children, Interface.interfaceParamString).join("\n") + "}\n";
     }
 
     public render() {
@@ -43,12 +54,6 @@ export default class Interface extends React.Component<Props, {}> {
 
                 <Snippet code={this.interfaceAsCode()}/>
             </div>
-
-            // <div>
-            //
-            //     <SemanticHeader size="small">Example</SemanticHeader>
-            //     <Snippet code={code}/>
-            // </div>
         );
     }
 }

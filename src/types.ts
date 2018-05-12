@@ -30,6 +30,7 @@ interface MethodDocumentation {
     // The method's signature, in Typescript format,
     // e.g. "canReturnCollateral(agreementId: string): Promise<boolean>"
     signature: string;
+    interfaces: string[];
 }
 
 interface InterfaceDocumentation {

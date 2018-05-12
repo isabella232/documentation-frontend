@@ -44,7 +44,12 @@ export default class Navigation extends React.Component<Props, {}> {
                     {
                         _.map(documentation.interfaces, (interfaceDoc) => {
                             const { name } = interfaceDoc;
-                            return <Menu.Item><a href={`#${name}`}>{name}</a></Menu.Item>;
+
+                            return (
+                                <Menu.Item key={name}>
+                                    <a href={`#${name}`}>{name}</a>
+                                </Menu.Item>
+                            );
                         })
                     }
                 </Accordion.Content>

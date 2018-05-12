@@ -10,6 +10,7 @@ import Snippet from "./Snippet";
 
 // Constants
 import { REPO_URL } from "../../../config/constants";
+import Interfaces from "./Interfaces";
 
 interface Props {
     method: MethodDocumentation;
@@ -44,6 +45,8 @@ export default class Method extends React.Component<Props, {}> {
                 }
 
                 <a href={`${REPO_URL}${method.source}`}>Source</a>
+
+                <Interfaces interfaceNames={method.interfaces}/>
             </Container>
         );
     }
