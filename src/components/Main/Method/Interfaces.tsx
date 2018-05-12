@@ -22,7 +22,7 @@ export default class Interfaces extends React.Component<Props, {}> {
 
         return (
             <Segment>
-                <SemanticHeader size="small">Interfaces Used</SemanticHeader>
+                <SemanticHeader size="small">Interfaces Referenced</SemanticHeader>
 
                 <ul>
                     {
