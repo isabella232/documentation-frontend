@@ -64,6 +64,15 @@ export default class Navigation extends React.Component<Props, {}> {
                          visible={visible}
                          vertical
                          borderless={true}>
+
+                    <Menu.Item>
+                        <a href="#Introduction">Introduction</a>
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <a href="#Contributing">Contributing</a>
+                    </Menu.Item>
+
                     <Accordion
                         exclusive={false}
                         panels={panels}

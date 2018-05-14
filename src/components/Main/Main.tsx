@@ -3,7 +3,7 @@ import * as _ from "lodash";
 import * as React from "react";
 
 // Semantic-UI components
-import { Segment } from "semantic-ui-react";
+import { Divider, Segment } from "semantic-ui-react";
 
 // Components
 import Section from "./Section/Section";
@@ -11,7 +11,9 @@ import Section from "./Section/Section";
 // Component-specific style
 import "./Main.css";
 
+import Contributing from "./Contributing/Contributing";
 import Interface from "./Interface/Interface";
+import Introduction from "./Introduction/Introduction";
 
 interface Props {
     documentation: Documentation;
@@ -26,6 +28,12 @@ export default class Main extends React.Component<Props, {}> {
 
         return (
             <Segment basic className="MainSegment">
+                <Introduction/>
+                <Divider />
+
+                <Contributing/>
+                <Divider />
+
                 {
                     // For each section, render a Section component with the relevant data.
                     _.map(documentation.sections, (section) => {

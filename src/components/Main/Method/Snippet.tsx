@@ -7,12 +7,17 @@ import "./Snippet.css";
 
 interface Props {
     code: string;
+    lang?: string;
 }
 
 /**
  * A component that renders a method's code signature or example as a code snippet.
  */
 export default class Snippet extends React.Component<Props, {}> {
+    public static defaultProps: Partial<Props> = {
+        lang: "typescript",
+    };
+
     private readonly snippetRef: React.RefObject<any>;
 
     constructor(props: Props) {
@@ -27,10 +32,12 @@ export default class Snippet extends React.Component<Props, {}> {
     }
 
     public highlightCode() {
+        const { lang } = this.props;
+
         const node = this.snippetRef.current;
 
         if (node) {
-            hljs.configure({ languages: ["typescript"] });
+            hljs.configure({ languages: [lang!] });
             hljs.highlightBlock(node);
         }
     }
