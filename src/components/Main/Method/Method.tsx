@@ -6,6 +6,7 @@ import { Container, Header as SemanticHeader } from "semantic-ui-react";
 
 // Components
 import ContentAnchor from "../ContentAnchor";
+import SectionLink from "../SectionLink";
 import Example from "./Example";
 import Interfaces from "./Interfaces";
 import Snippet from "./Snippet";
@@ -30,7 +31,7 @@ export default class Method extends React.Component<Props, {}> {
             <Container className="Method">
                 <ContentAnchor id={name}/>
 
-                <SemanticHeader>{name}</SemanticHeader>
+                <SemanticHeader>{name} <SectionLink id={name}/></SemanticHeader>
 
                 {
                     method.description && method.description.split("\n\n").map((line) => {

@@ -7,6 +7,7 @@ import { Container, Header as SemanticHeader } from "semantic-ui-react";
 // Components
 import ContentAnchor from "../ContentAnchor";
 import Snippet from "../Method/Snippet";
+import SectionLink from "../SectionLink";
 
 /**
  * A component that renders information about contributing to Dharma.js.
@@ -19,6 +20,7 @@ export default class Contributing extends React.Component<{}, {}> {
 
                 <SemanticHeader size="huge">
                     Contributing
+                    <SectionLink id="Contributing"/>
                 </SemanticHeader>
 
                 <SemanticHeader size="small" className="SectionTitle">
