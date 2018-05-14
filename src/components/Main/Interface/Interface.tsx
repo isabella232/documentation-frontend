@@ -6,6 +6,7 @@ import * as React from "react";
 import { Header as SemanticHeader } from "semantic-ui-react";
 
 // Components
+import ContentAnchor from "../ContentAnchor";
 import Snippet from "../Method/Snippet";
 
 interface Props {
@@ -48,7 +49,7 @@ export default class Interface extends React.Component<Props, {}> {
 
         return (
             <div className="Interface">
-                <a className="ContentAnchor" id={name} />
+                <ContentAnchor id={name}/>
 
                 <SemanticHeader>{name}</SemanticHeader>
 

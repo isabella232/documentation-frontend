@@ -6,6 +6,7 @@ import * as React from "react";
 import { Container, Divider, Header as SemanticHeader } from "semantic-ui-react";
 
 // Components
+import ContentAnchor from "../ContentAnchor";
 import Method from "../Method/Method";
 
 interface Props {
@@ -27,7 +28,7 @@ export default class Class extends React.Component<Props, {}> {
 
         return (
             <div className="Class">
-                <a className="ContentAnchor" id={name} />
+                <ContentAnchor id={name}/>
 
                 <SemanticHeader size="large">{name}</SemanticHeader>
                 {

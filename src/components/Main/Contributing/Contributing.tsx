@@ -5,6 +5,7 @@ import * as React from "react";
 import { Container, Header as SemanticHeader } from "semantic-ui-react";
 
 // Components
+import ContentAnchor from "../ContentAnchor";
 import Snippet from "../Method/Snippet";
 
 /**
@@ -14,7 +15,7 @@ export default class Contributing extends React.Component<{}, {}> {
     public render() {
         return (
             <Container className="Section">
-                <a className="ContentAnchor" id="Contributing"/>
+                <ContentAnchor id="Contributing"/>
 
                 <SemanticHeader size="huge">
                     Contributing

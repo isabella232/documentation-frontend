@@ -3,6 +3,9 @@ import * as React from "react";
 
 // Semantic-UI components
 import { Container, Header as SemanticHeader } from "semantic-ui-react";
+
+// Components
+import ContentAnchor from "../ContentAnchor";
 import Snippet from "../Method/Snippet";
 /**
  * A component that renders an introduction to the documentation.
@@ -11,7 +14,7 @@ export default class Introduction extends React.Component<{}, {}> {
     public render() {
         return (
             <Container className="Section">
-                <a className="ContentAnchor" id="Introduction"/>
+                <ContentAnchor id="Introduction"/>
 
                 <SemanticHeader size="huge" className="SectionTitle">
                     Introduction

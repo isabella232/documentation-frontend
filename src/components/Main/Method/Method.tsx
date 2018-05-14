@@ -5,12 +5,13 @@ import * as React from "react";
 import { Container, Header as SemanticHeader } from "semantic-ui-react";
 
 // Components
+import ContentAnchor from "../ContentAnchor";
 import Example from "./Example";
+import Interfaces from "./Interfaces";
 import Snippet from "./Snippet";
 
 // Constants
 import { REPO_URL } from "../../../config/constants";
-import Interfaces from "./Interfaces";
 
 interface Props {
     method: MethodDocumentation;
@@ -27,7 +28,7 @@ export default class Method extends React.Component<Props, {}> {
 
         return (
             <Container className="Method">
-                <a className="ContentAnchor" id={name}/>
+                <ContentAnchor id={name}/>
 
                 <SemanticHeader>{name}</SemanticHeader>
 
