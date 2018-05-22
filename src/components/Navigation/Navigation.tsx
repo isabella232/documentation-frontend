@@ -73,6 +73,10 @@ export default class Navigation extends React.Component<Props, {}> {
                         <a href="#Contributing">Contributing</a>
                     </Menu.Item>
 
+                    <Menu.Item>
+                        <a href="#Upgrading">Upgrade Procedures</a>
+                    </Menu.Item>
+
                     <Accordion
                         exclusive={false}
                         panels={panels}

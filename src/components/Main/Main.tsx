@@ -14,6 +14,7 @@ import "./Main.css";
 import Contributing from "./Contributing/Contributing";
 import Interface from "./Interface/Interface";
 import Introduction from "./Introduction/Introduction";
+import Upgrading from "./Upgrading/Upgrading";
 
 interface Props {
     documentation: Documentation;
@@ -32,6 +33,9 @@ export default class Main extends React.Component<Props, {}> {
                 <Divider />
 
                 <Contributing/>
+                <Divider />
+
+                <Upgrading/>
                 <Divider />
 
                 {
