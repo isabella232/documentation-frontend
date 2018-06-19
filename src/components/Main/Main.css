@@ -17,3 +17,19 @@
     top: -100px;
     visibility: hidden;
 }
+
+.ui.divider {
+    margin: 40px 0;
+}
+
+.ui.huge.header {
+    font-size: 2.5em;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+.subsection {
+    margin-top: 40px;
+}

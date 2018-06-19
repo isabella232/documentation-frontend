@@ -5,7 +5,6 @@ import * as React from "react";
 import { Container, Header as SemanticHeader, Item, Menu } from "semantic-ui-react";
 
 // Components
-import GithubBadge from "./GithubBadge";
 import Logo from "./Logo";
 
 // Component-specific style
@@ -18,16 +17,12 @@ export default class Header extends React.Component<{}, {}> {
     public render() {
         return (
             <Menu className="HeaderMenu">
-                <Container>
+                <Container className="HeaderMenuContainer">
                     <Item>
                         <SemanticHeader className="NavigationBrand">
                             <Logo src={require("../../assets/images/logo_color.png")} />
                             Dharma.js
                         </SemanticHeader>
-                    </Item>
-
-                    <Item className="float right">
-                        <GithubBadge/>
                     </Item>
                 </Container>
             </Menu>

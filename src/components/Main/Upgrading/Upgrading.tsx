@@ -6,7 +6,7 @@ import { Container, Header as SemanticHeader } from "semantic-ui-react";
 
 // Components
 import ContentAnchor from "../ContentAnchor";
-import SectionLink from "../SectionLink";
+
 /**
  * A component that renders an introduction to the documentation.
  */
@@ -18,7 +18,6 @@ export default class Upgrading extends React.Component<{}, {}> {
 
                 <SemanticHeader size="huge" className="SectionTitle">
                     Upgrade Procedures
-                    <SectionLink id="Upgrading"/>
                 </SemanticHeader>
 
                 <p>Performing upgrades

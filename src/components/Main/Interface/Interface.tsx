@@ -8,7 +8,6 @@ import { Header as SemanticHeader } from "semantic-ui-react";
 // Components
 import ContentAnchor from "../ContentAnchor";
 import Snippet from "../Method/Snippet";
-import SectionLink from "../SectionLink";
 
 interface Props {
     interfaceDoc: InterfaceDocumentation;
@@ -52,7 +51,7 @@ export default class Interface extends React.Component<Props, {}> {
             <div className="Interface">
                 <ContentAnchor id={name}/>
 
-                <SemanticHeader>{name} <SectionLink id={name}/></SemanticHeader>
+                <SemanticHeader>{name}</SemanticHeader>
 
                 <Snippet code={this.interfaceAsCode()}/>
             </div>

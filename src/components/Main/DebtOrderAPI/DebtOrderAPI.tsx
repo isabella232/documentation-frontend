@@ -7,7 +7,7 @@ import { Container, Header as SemanticHeader } from "semantic-ui-react";
 // Components
 import ContentAnchor from "../ContentAnchor";
 import Snippet from "../Method/Snippet";
-import SectionLink from "../SectionLink";
+
 /**
  * A component that renders an introduction to the documentation.
  */
@@ -18,17 +18,12 @@ export default class DebtOrderAPI extends React.Component<{}, {}> {
                 <ContentAnchor id="DebtOrderAPI"/>
 
                 <SemanticHeader size="huge" className="SectionTitle">
-                    Debt Orders
-                    <SectionLink id="DebtOrderAPI"/>
+                    Introduction
                 </SemanticHeader>
 
                 <ContentAnchor id="DebtOrderInstantiation"/>
 
                 <SemanticHeader size="large">Opening a DebtOrder</SemanticHeader>
-
-                <p>To instantiate a new debt order, first include <strong>Dharma</strong>:</p>
-
-                <Snippet lang="JS" code="import Dharma from '@dharmaprotocol/dharma.js'"/>
 
                 <p>Use <strong>Dharma.Types</strong> to pull the relevant types required for a DebtOrder:</p>
 
@@ -37,7 +32,7 @@ export default class DebtOrderAPI extends React.Component<{}, {}> {
     DebtOrder, TokenAmount, TimeInterval, EthereumAddress, InterestRate,
 } = Dharma.Types;`}/>
 
-                Use these types to instantiate a new Dharma DebtOrder using your required values:
+                <p>Use these types to instantiate a new Dharma DebtOrder using your required values:</p>
 
                 <Snippet lang="JS" code={`const order = await DebtOrder.create(dharma, {
     principal: new TokenAmount(5, "WETH"),
