@@ -12,8 +12,9 @@ import Section from "./Section/Section";
 import "./Main.css";
 
 import Contributing from "./Contributing/Contributing";
+import DebtOrderAPI from "./DebtOrderAPI/DebtOrderAPI";
 import Interface from "./Interface/Interface";
-import Introduction from "./Introduction/Introduction";
+import Installation from "./Introduction/Installation";
 import Upgrading from "./Upgrading/Upgrading";
 
 interface Props {
@@ -29,13 +30,10 @@ export default class Main extends React.Component<Props, {}> {
 
         return (
             <Segment basic className="MainSegment">
-                <Introduction/>
+                <Installation/>
                 <Divider />
 
-                <Contributing/>
-                <Divider />
-
-                <Upgrading/>
+                <DebtOrderAPI/>
                 <Divider />
 
                 {
@@ -53,6 +51,12 @@ export default class Main extends React.Component<Props, {}> {
                         return <Interface interfaceDoc={interfaceDoc}/>;
                     })
                 }
+
+                <Contributing/>
+                <Divider />
+
+                <Upgrading/>
+                <Divider />
             </Segment>
         );
     }

@@ -57,32 +57,64 @@ export default class Navigation extends React.Component<Props, {}> {
         });
 
         return (
-                <Sidebar as={Menu}
-                         className="SidebarMenu"
-                         animation="push"
-                         width="wide"
-                         visible={visible}
-                         vertical
-                         borderless={true}>
+            <Sidebar as={Menu}
+                     className="SidebarMenu"
+                     animation="push"
+                     width="wide"
+                     visible={visible}
+                     vertical
+                     borderless={true}>
 
-                    <Menu.Item>
-                        <a href="#Introduction">Introduction</a>
-                    </Menu.Item>
+                <h3>Installation</h3>
+                <Menu.Item>
+                    <a href="#Installation">Installing Dharma.js</a>
+                </Menu.Item>
 
-                    <Menu.Item>
-                        <a href="#Contributing">Contributing</a>
-                    </Menu.Item>
+                <h3>Basic</h3>
+                <Menu.Item>
+                    <a href="#DebtOrderAPI">Opening a Debt Order</a>
+                </Menu.Item>
 
-                    <Menu.Item>
-                        <a href="#Upgrading">Upgrade Procedures</a>
-                    </Menu.Item>
+                <Menu.Item>
+                    <a href="#DebtOrderCancel">Cancelling a Debt Order</a>
+                </Menu.Item>
 
-                    <Accordion
-                        exclusive={false}
-                        panels={panels}
-                        defaultActiveIndex={_.range(sections.length + 1)}
-                        fluid />
-                </Sidebar>
+                <Menu.Item>
+                    <a href="#DebtOrderFill">Filling a Debt Order</a>
+                </Menu.Item>
+
+                <Menu.Item>
+                    <a href="#DebtOrderRepay">Making Repayments</a>
+                </Menu.Item>
+
+                <Menu.Item>
+                    <a href="#DebtOrderGetRepaymentAmount">Getting Total Expected Repayment Amount</a>
+                </Menu.Item>
+
+                <Menu.Item>
+                    <a href="#DebtOrderSeize">Seizing Collateral</a>
+                </Menu.Item>
+
+                <Menu.Item>
+                    <a href="#DebtOrderReturn">Returning Collateral</a>
+                </Menu.Item>
+
+                <h3>API Reference</h3>
+                <Accordion
+                    exclusive={false}
+                    panels={panels}
+                    defaultActiveIndex={_.range(sections.length + 1)}
+                    fluid />
+
+                <h3>Other</h3>
+                <Menu.Item>
+                    <a href="#Contributing">Contributing to Dharma</a>
+                </Menu.Item>
+
+                <Menu.Item>
+                    <a href="#Upgrading">Upgrade Procedures</a>
+                </Menu.Item>
+            </Sidebar>
         );
     }
 }

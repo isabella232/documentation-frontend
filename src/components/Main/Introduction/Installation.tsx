@@ -11,11 +11,11 @@ import SectionLink from "../SectionLink";
 /**
  * A component that renders an introduction to the documentation.
  */
-export default class Introduction extends React.Component<{}, {}> {
+export default class Installation extends React.Component<{}, {}> {
     public render() {
         return (
             <Container className="Section">
-                <ContentAnchor id="Introduction"/>
+                <ContentAnchor id="Installation"/>
 
                 <SemanticHeader size="huge" className="SectionTitle">
                     Introduction
