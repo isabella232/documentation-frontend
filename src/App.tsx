@@ -1,12 +1,10 @@
 // External libraries
 import * as React from "react";
 
-// Semantic-UI components.
-import { Loader } from "semantic-ui-react";
-
 // Components
 import Header from "./components/Header/Header";
 import Layout from "./components/Layout/Layout";
+import Loading from "./components/Loading/Loading";
 
 // The S3 location where documentation is stored.
 import { DOCUMENTATION_SOURCE } from "./config/constants";
@@ -45,7 +43,7 @@ class App extends React.Component<{}, State> {
                         // Once the documentation data has loaded, render navigation and content.
                         ? <Layout documentation={documentation}/>
                         // Before documentation data is present, render a loader.
-                        : <Loader active={true} content="Loading Documentation..." />
+                        : <Loading />
                 }
             </div>
       );
