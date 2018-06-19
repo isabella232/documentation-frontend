@@ -22,21 +22,37 @@ export default class Installation extends React.Component<{}, {}> {
                     <SectionLink id="Introduction"/>
                 </SemanticHeader>
 
-                <SemanticHeader size="tiny">Installing Dharma.js</SemanticHeader>
+                <div className="subsection">
+                    <SemanticHeader size="large">Installing Dharma.js</SemanticHeader>
 
-                <p>Add Dharma.js to your project using yarn:</p>
+                    <p>Add Dharma.js to your project using yarn:</p>
 
-                <Snippet lang="bash" code="yarn add @dharmaprotocol/dharma.js"/>
+                    <Snippet lang="bash" code="yarn add @dharmaprotocol/dharma.js"/>
 
-                <p>Alternatively, add Dharma.js to your project using npm:</p>
+                    <p>Alternatively, add Dharma.js to your project using npm:</p>
 
-                <Snippet lang="bash" code="npm install @dharmaprotocol/dharma.js --save"/>
+                    <Snippet lang="bash" code="npm install @dharmaprotocol/dharma.js --save"/>
+                </div>
 
-                Include Dharma.js into your project code using ES6 style imports (recommended):
+                <div className="subsection">
+                    <SemanticHeader size="large">Importing Dharma.js</SemanticHeader>
 
-                <Snippet lang="typescript" code={`import Dharma from "@dharmaprotocol/dharma.js";
+                    <p>Include Dharma.js in your project code using ES6 style imports (recommended):</p>
 
-const dharma = new Dharma(web3.currentProvider);`}/>
+                    <Snippet lang="typescript" code={`import Dharma from "@dharmaprotocol/dharma.js";`}/>
+
+                    <p>Alternatively, include Dharma.js in your project code using <em>require</em> syntax:</p>
+
+                    <Snippet lang="typescript" code={`const Dharma = require("@dharmaprotocol/dharma.js");`}/>
+                </div>
+
+                <div className="subsection">
+                    <SemanticHeader size="large">Instantiating Dharma.js</SemanticHeader>
+
+                    <p>Instantiate a new Dharma object:</p>
+
+                    <Snippet lang="typescript" code={`const dharma = new Dharma(web3.currentProvider);`}/>
+                </div>
             </Container>
         );
     }
