@@ -56,21 +56,16 @@ export default class Navigation extends React.Component<Props, {}> {
             ),
         });
 
-        return (
-            <Sidebar as={Menu}
-                     className="SidebarMenu"
-                     animation="push"
-                     width="wide"
-                     visible={visible}
-                     vertical
-                     borderless={true}>
-
-                <h3>Installation</h3>
+        const InstallationContent = (
+            <div>
                 <Menu.Item>
                     <a href="#Installation">Installing Dharma.js</a>
                 </Menu.Item>
+            </div>
+        );
 
-                <h3>Basic</h3>
+        const BasicContent = (
+            <div>
                 <Menu.Item>
                     <a href="#DebtOrderAPI">Opening a Debt Order</a>
                 </Menu.Item>
@@ -98,18 +93,39 @@ export default class Navigation extends React.Component<Props, {}> {
                 <Menu.Item>
                     <a href="#DebtOrderReturn">Returning Collateral</a>
                 </Menu.Item>
+            </div>
+        );
 
-                <h3>API Reference</h3>
-                <Accordion panels={panels}/>
+        const APIReferenceContent = (
+            <div>
+                <Accordion.Accordion panels={panels} />
+            </div>
+        );
 
-                <h3>Other</h3>
-                <Menu.Item>
-                    <a href="#Contributing">Contributing to Dharma</a>
-                </Menu.Item>
+        const rootPanels = [
+            { title: "Installation", content: { content: InstallationContent, key: "content-1" } },
+            { title: "Basic", content: { content: BasicContent, key: "content-2" } },
+            { title: "API Reference", content: { content: APIReferenceContent, key: "content-3" } },
+        ];
 
-                <Menu.Item>
-                    <a href="#Upgrading">Upgrade Procedures</a>
-                </Menu.Item>
+        return (
+            <Sidebar as={Menu}
+                     className="SidebarMenu"
+                     animation="push"
+                     width="wide"
+                     visible={visible}
+                     vertical
+                     borderless={true}>
+
+                <Accordion defaultActiveIndex={1} panels={rootPanels} />
+
+                {/*<Menu.Item>*/}
+                    {/*<a href="#Contributing">Contributing to Dharma</a>*/}
+                {/*</Menu.Item>*/}
+
+                {/*<Menu.Item>*/}
+                    {/*<a href="#Upgrading">Upgrade Procedures</a>*/}
+                {/*</Menu.Item>*/}
             </Sidebar>
         );
     }

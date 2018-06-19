@@ -27,10 +27,22 @@
     box-shadow: none !important;
 }
 
-.accordion .title {
+.ui.accordion .title:not(.ui) {
     text-transform: capitalize;
 
     font-size: 1.2em;
+}
+
+.accordion {
+    border: none;
+}
+
+.accordion.ui .accordion {
+    padding-left: 1em;
+}
+
+.ui.accordion .accordion .title:not(.ui) {
+    font-size: 1em;
 }
 
 .SidebarMenu {
