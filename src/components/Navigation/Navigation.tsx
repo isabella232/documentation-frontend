@@ -27,7 +27,7 @@ export default class Navigation extends React.Component<Props, {}> {
         // the relevant classes.
         const panels = _.map(sections, (section) => {
             return {
-                title: section.title,
+                title: section.title.replace(/_/g, " "),
                 content: (
                     <Accordion.Content>
                         <Classes classes={section.classes}/>
