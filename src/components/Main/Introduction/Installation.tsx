@@ -48,7 +48,13 @@ export default class Installation extends React.Component<{}, {}> {
                 <div className="subsection">
                     <SemanticHeader size="large">Instantiating Dharma.js</SemanticHeader>
 
-                    <p>Instantiate a new Dharma object:</p>
+                    <p>Instantiate a new Web3 object:</p>
+
+                    <Snippet
+                        lang="typescript"
+                        code={`const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));`}/>
+
+                    <p>Instantiate a new Dharma object with the web3 provider specified:</p>
 
                     <Snippet lang="typescript" code={`const dharma = new Dharma(web3.currentProvider);`}/>
                 </div>
