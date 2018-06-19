@@ -26,19 +26,20 @@ export default class DebtOrderAPI extends React.Component<{}, {}> {
 
                 <SemanticHeader size="large">Opening a DebtOrder</SemanticHeader>
 
-                <p>To instantiate a new debt order, include <strong>Types</strong> along with <strong>
-                    Dharma</strong>:</p>
+                <p>To instantiate a new debt order, first include <strong>Dharma</strong>:</p>
 
-                <Snippet lang="JS" code="import { Dharma, Types } from '@dharmaprotocol/dharma.js'"/>
+                <Snippet lang="JS" code="import Dharma from '@dharmaprotocol/dharma.js'"/>
 
-                <p>Use Types to pull the relevant types required for a DebtOrder:</p>
+                <p>Use <strong>Dharma.Types</strong> to pull the relevant types required for a DebtOrder:</p>
 
                 <Snippet lang="JS"
-                         code="const { TokenAmount, TimeInterval, EthereumAddress, InterestRate } = Types;"/>
+                         code={`const {
+    DebtOrder, TokenAmount, TimeInterval, EthereumAddress, InterestRate,
+} = Dharma.Types;`}/>
 
                 Use these types to instantiate a new Dharma DebtOrder using your required values:
 
-                <Snippet lang="JS" code={`const order = await DharmaTypes.DebtOrder.create(dharma, {
+                <Snippet lang="JS" code={`const order = await DebtOrder.create(dharma, {
     principal: new TokenAmount(5, "WETH"),
     collateral: new TokenAmount(100, "REP"),
     debtorAddress: new EthereumAddress("0xd2f45e02ab7b190ac9a87b743eab4c8f2ed0e491"),
