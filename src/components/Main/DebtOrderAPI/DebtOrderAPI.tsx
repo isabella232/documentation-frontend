@@ -18,7 +18,7 @@ export default class DebtOrderAPI extends React.Component<{}, {}> {
                 <ContentAnchor id="DebtOrderAPI"/>
 
                 <SemanticHeader size="huge" className="SectionTitle">
-                    Debt Orders
+                    Introduction
                 </SemanticHeader>
 
                 <ContentAnchor id="DebtOrderInstantiation"/>
