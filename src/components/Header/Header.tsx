@@ -26,18 +26,6 @@ export default class Header extends React.Component<{}, {}> {
                         </SemanticHeader>
                     </Item>
 
-                    <Item>
-                        <a href="https://whitepaper.dharma.io">Whitepaper</a>
-                    </Item>
-
-                    <Item>
-                        <a href="https://dharma.io/tutorial">Tutorial</a>
-                    </Item>
-
-                    <Item>
-                        <a href="https://plex.dharma.io">Plex</a>
-                    </Item>
-
                     <Item className="float right">
                         <GithubBadge/>
                     </Item>
