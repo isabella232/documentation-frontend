@@ -15,13 +15,12 @@ export default class Installation extends React.Component<{}, {}> {
     public render() {
         return (
             <Container className="Section">
-                <ContentAnchor id="Installation"/>
-
                 <SemanticHeader size="huge" className="SectionTitle">
-                    Introduction
+                    Installation
                 </SemanticHeader>
 
                 <div className="subsection">
+                    <ContentAnchor id="Installation"/>
                     <SemanticHeader size="large">Installing Dharma.js</SemanticHeader>
 
                     <p>Add Dharma.js to your project using yarn:</p>
@@ -34,6 +33,7 @@ export default class Installation extends React.Component<{}, {}> {
                 </div>
 
                 <div className="subsection">
+                    <ContentAnchor id="Import"/>
                     <SemanticHeader size="large">Importing Dharma.js</SemanticHeader>
 
                     <p>Include Dharma.js in your project code using ES6 style imports (recommended):</p>
@@ -46,6 +46,7 @@ export default class Installation extends React.Component<{}, {}> {
                 </div>
 
                 <div className="subsection">
+                    <ContentAnchor id="Instantiation"/>
                     <SemanticHeader size="large">Instantiating Dharma.js</SemanticHeader>
 
                     <p>Instantiate a new Web3 object:</p>

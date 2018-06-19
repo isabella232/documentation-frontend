@@ -61,6 +61,14 @@ export default class Navigation extends React.Component<Props, {}> {
                 <Menu.Item>
                     <a href="#Installation">Installing Dharma.js</a>
                 </Menu.Item>
+
+                <Menu.Item>
+                    <a href="#Import">Importing Dharma.js</a>
+                </Menu.Item>
+
+                <Menu.Item>
+                    <a href="#Instantiation">Instantiating Dharma.js</a>
+                </Menu.Item>
             </div>
         );
 
@@ -104,7 +112,7 @@ export default class Navigation extends React.Component<Props, {}> {
 
         const rootPanels = [
             { title: "Installation", content: { content: InstallationContent, key: "content-1" } },
-            { title: "Basic", content: { content: BasicContent, key: "content-2" } },
+            { title: "Introduction", content: { content: BasicContent, key: "content-2" } },
             { title: "API Reference", content: { content: APIReferenceContent, key: "content-3" } },
         ];
 
