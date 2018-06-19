@@ -7,7 +7,7 @@ import { Container, Header as SemanticHeader } from "semantic-ui-react";
 // Components
 import ContentAnchor from "../ContentAnchor";
 import Snippet from "../Method/Snippet";
-import SectionLink from "../SectionLink";
+
 /**
  * A component that renders an introduction to the documentation.
  */
@@ -19,7 +19,6 @@ export default class Installation extends React.Component<{}, {}> {
 
                 <SemanticHeader size="huge" className="SectionTitle">
                     Introduction
-                    <SectionLink id="Introduction"/>
                 </SemanticHeader>
 
                 <div className="subsection">
