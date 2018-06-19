@@ -27,7 +27,7 @@ export default class Navigation extends React.Component<Props, {}> {
         // the relevant classes.
         const panels = _.map(sections, (section) => {
             return {
-                title: section.title,
+                title: section.title.replace(/_/g, " "),
                 content: (
                     <Accordion.Content>
                         <Classes classes={section.classes}/>
@@ -100,11 +100,7 @@ export default class Navigation extends React.Component<Props, {}> {
                 </Menu.Item>
 
                 <h3>API Reference</h3>
-                <Accordion
-                    exclusive={false}
-                    panels={panels}
-                    defaultActiveIndex={_.range(sections.length + 1)}
-                    fluid />
+                <Accordion panels={panels}/>
 
                 <h3>Other</h3>
                 <Menu.Item>
