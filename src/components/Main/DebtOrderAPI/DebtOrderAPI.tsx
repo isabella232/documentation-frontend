@@ -36,7 +36,7 @@ export default class DebtOrderAPI extends React.Component<{}, {}> {
     DebtOrder, TokenAmount, TimeInterval, EthereumAddress, InterestRate,
 } = Dharma.Types;`}/>
 
-                Use these types to instantiate a new Dharma DebtOrder using your required values:
+                <p>Use these types to instantiate a new Dharma DebtOrder using your required values:</p>
 
                 <Snippet lang="JS" code={`const order = await DebtOrder.create(dharma, {
     principal: new TokenAmount(5, "WETH"),
