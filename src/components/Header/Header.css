@@ -1,10 +1,19 @@
-.NavigationBrand {
-    padding-top: 4px !important;
+.ui.header.NavigationBrand {
+    padding-top: 4px;
+    color: #fff;
+    font-size: 1.5em;
 }
 
-.HeaderMenu {
+.ui.HeaderMenuContainer {
+    width: 100%;
+}
+
+.ui.HeaderMenu {
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 100;
+
+    background-color: #082c30;
+    border-radius: 0;
 }
