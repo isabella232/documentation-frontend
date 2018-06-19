@@ -25,10 +25,6 @@ export default class DebtOrderAPI extends React.Component<{}, {}> {
 
                 <SemanticHeader size="large">Opening a DebtOrder</SemanticHeader>
 
-                <p>To instantiate a new debt order, first include <strong>Dharma</strong>:</p>
-
-                <Snippet lang="JS" code="import Dharma from '@dharmaprotocol/dharma.js'"/>
-
                 <p>Use <strong>Dharma.Types</strong> to pull the relevant types required for a DebtOrder:</p>
 
                 <Snippet lang="JS"
