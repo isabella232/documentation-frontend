@@ -8,7 +8,6 @@ import { Container, Divider, Header as SemanticHeader } from "semantic-ui-react"
 // Components
 import ContentAnchor from "../ContentAnchor";
 import Method from "../Method/Method";
-import SectionLink from "../SectionLink";
 
 interface Props {
     classDoc: ClassDocumentation;
@@ -31,7 +30,7 @@ export default class Class extends React.Component<Props, {}> {
             <div className="Class">
                 <ContentAnchor id={name}/>
 
-                <SemanticHeader size="large">{name} <SectionLink id={name}/></SemanticHeader>
+                <SemanticHeader size="large">{name}</SemanticHeader>
                 {
                     // For each method, render a Method component followed by a hidden UI divider.
                     _.map(methods, (method) => {

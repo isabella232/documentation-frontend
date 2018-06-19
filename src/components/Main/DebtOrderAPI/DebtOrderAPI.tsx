@@ -7,7 +7,7 @@ import { Container, Header as SemanticHeader } from "semantic-ui-react";
 // Components
 import ContentAnchor from "../ContentAnchor";
 import Snippet from "../Method/Snippet";
-import SectionLink from "../SectionLink";
+
 /**
  * A component that renders an introduction to the documentation.
  */
@@ -19,7 +19,6 @@ export default class DebtOrderAPI extends React.Component<{}, {}> {
 
                 <SemanticHeader size="huge" className="SectionTitle">
                     Debt Orders
-                    <SectionLink id="DebtOrderAPI"/>
                 </SemanticHeader>
 
                 <ContentAnchor id="DebtOrderInstantiation"/>
