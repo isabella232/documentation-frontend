@@ -25,22 +25,19 @@ export default class DebtOrderAPI extends React.Component<{}, {}> {
 
                 <SemanticHeader size="large">Opening a DebtOrder</SemanticHeader>
 
-                <p>Use <strong>Dharma.Types</strong> to pull the relevant types required for a DebtOrder:</p>
-
-                <Snippet lang="JS"
-                         code={`const {
-    DebtOrder, TokenAmount, TimeInterval, EthereumAddress, InterestRate,
-} = Dharma.Types;`}/>
-
-                <p>Use these types to instantiate a new Dharma DebtOrder using your required values:</p>
+                <p>Open a debt order by specifying the terms of the agreement:</p>
 
                 <Snippet lang="JS" code={`const order = await DebtOrder.create(dharma, {
-    principal: new TokenAmount(5, "WETH"),
-    collateral: new TokenAmount(100, "REP"),
-    debtorAddress: new EthereumAddress("0xd2f45e02ab7b190ac9a87b743eab4c8f2ed0e491"),
-    interestRate: new InterestRate(5),
-    termLength: new TimeInterval(2, "months"),
-    expiresIn: new TimeInterval(1, "week")
+    principalAmount: 5,
+    principalToken: "WETH",
+    collateralAmount: 100,
+    collateralToken: "REP",
+    interestRate: 12.3,
+    termDuration: 6,
+    termUnit: "months",
+    debtorAddress: "0xd2f45e02ab7b190ac9a87b743eab4c8f2ed0e491",
+    expiresInDuration: 5,
+    expiresInUnit: "days",
 });`}/>
 
                 <ContentAnchor id="DebtOrderCancel"/>
