@@ -49,15 +49,17 @@ export default class Installation extends React.Component<{}, {}> {
                     <ContentAnchor id="Instantiation"/>
                     <SemanticHeader size="large">Instantiating Dharma.js</SemanticHeader>
 
-                    <p>Instantiate a new Web3 object:</p>
+                    <p>
+                        Instantiate a new Dharma object. If you need to specify the location of
+                        a blockchain node, you can pass that in as a parameter:
+                    </p>
 
-                    <Snippet
-                        lang="typescript"
-                        code={`const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));`}/>
+                    <Snippet lang="typescript" code={`const dharma = new Dharma("http://localhost:8545");`}/>
 
-                    <p>Instantiate a new Dharma object with the web3 provider specified:</p>
+                    <p>If your app relies on an injected web3 instance from the browser, then you
+                    don't need to pass a host:</p>
 
-                    <Snippet lang="typescript" code={`const dharma = new Dharma(web3.currentProvider);`}/>
+                    <Snippet lang="typescript" code={`const dharma = new Dharma();`}/>
                 </div>
             </Container>
         );

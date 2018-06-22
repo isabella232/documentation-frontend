@@ -65,7 +65,7 @@ export default class DebtOrderAPI extends React.Component<{}, {}> {
 
                 <Snippet lang="JS"
                          code={`const transactionHash = await debtOrder.fillAsCreditor(
-    new EthereumAddress("0xd2f45e02ab7b190ac9a87b743eab4c8f2ed0e491");
+    "0xd2f45e02ab7b190ac9a87b743eab4c8f2ed0e491",
 );`}/>
 
                 <p>After filling the DebtOrder, you might want to wait for the next transaction to be mined
@@ -82,9 +82,8 @@ export default class DebtOrderAPI extends React.Component<{}, {}> {
                     `makeRepayment` method:</p>
 
                 <Snippet lang="JS"
-                         code={`const transactionHash = await debtOrder.makeRepayment(
-    new TokenAmount(1, "REP"),
-);
+                         code={`// Make a repayment of 5 units of the principal token
+const transactionHash = await debtOrder.makeRepayment(5);
 `}/>
                 <p>Again, you might want to wait for the next transaction to be mined on the
                     Ethereum blockchain:</p>
