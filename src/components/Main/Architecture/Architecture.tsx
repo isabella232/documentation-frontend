@@ -14,18 +14,43 @@ export default class Architecture extends React.Component<{}, {}> {
     public render() {
         return (
             <Container className="Section">
+                <ContentAnchor id="ArchitectureIntroduction"/>
                 <SemanticHeader size="huge" className="SectionTitle">
-                    Architecture
+                    Architecture Overview
                 </SemanticHeader>
 
                 <div className="subsection">
-                    <ContentAnchor id="ArchitectureIntroduction"/>
-                    <SemanticHeader size="large">Introduction</SemanticHeader>
+                    <p>Dharma Protocol defines a procedure for issuing, funding, administering,
+                        and trading debt assets using a set of smart contracts.</p>
+
+                    <p>In the <em>broadcast debt order</em> model, a debtor will sign a debt order
+                        specifying the parameters of a debt they want funded. An underwriter will
+                        commit a risk rating to this order, and post it on a relayer's order book. A
+                        creditor will fund the debt by filling the debt order. The <a
+                            href="#ContractsDebtKernel">Debt Kernel</a> contract will issue a
+                        tradable debt token (ERC721) to the creditor, and
+                        store the details of the debt agreement in the <a
+                            href="#ContractsDebtRegistry">Debt Registry</a> contract. The
+                        debt kernel will transfer funds from the creditor to the borrower, and pay
+                        relevant fees to the underwriter and relayer for their services.</p>
+
+                    <p><em>Note:</em> The Debt Kernel makes all transfers via a <a
+                        href="#ContractsTokenTransferProxy">Token Transfer Proxy</a> contract, so
+                        that the creditor and debtor would not need to update their token
+                        permissions in the case of a contract upgrade.</p>
+
+                    <h3>Filling a Broadcast Debt Order</h3>
+                    <img src={require("../../../assets/images/Broadcast-Debt-Order.png")}
+                         style={{ width: "100%" }}/>
                 </div>
 
                 <div className="subsection">
                     <ContentAnchor id="ContractsDebtKernel"/>
-                    <SemanticHeader size="large">DebtKernel.sol</SemanticHeader>
+                    <SemanticHeader size="large">
+                        <a href="https://github.com/dharmaprotocol/charta/blob/master/contracts/DebtKernel.sol">
+                            DebtKernel.sol
+                        </a>
+                    </SemanticHeader>
 
                     <p>The debt kernel is a smart contract that contains business logic
                         associated with filling a debt order. This includes determining whether a
@@ -42,7 +67,11 @@ export default class Architecture extends React.Component<{}, {}> {
 
                 <div className="subsection">
                     <ContentAnchor id="ContractsDebtRegistry"/>
-                    <SemanticHeader size="large">DebtRegistry.sol</SemanticHeader>
+                    <SemanticHeader size="large">
+                        <a href="https://github.com/dharmaprotocol/charta/blob/master/contracts/DebtRegistry.sol">
+                            DebtRegistry.sol
+                        </a>
+                    </SemanticHeader>
 
                     <p>The debt registry contains detailed information about each debt agreement,
                         including:</p>
@@ -64,8 +93,17 @@ export default class Architecture extends React.Component<{}, {}> {
 
                 <div className="subsection">
                     <ContentAnchor id="ContractsTokenTransferProxy"/>
-                    <SemanticHeader size="large">TokenTransferProxy.sol</SemanticHeader>
+                    <SemanticHeader size="large">
+                        <a href="https://github.com/dharmaprotocol/charta/blob/master/contracts/TokenTransferProxy.sol">
+                            TokenTransferProxy.sol
+                        </a>
+                    </SemanticHeader>
 
+                    <p>This contract exists in order to transfer tokens (including principal, fees,
+                        repayments, and collateral), on behalf of core Dharma Protocol contracts
+                        such as the Debt Kernel. By decoupling contracts from transfers, the
+                        core contracts can be upgraded without requiring users to grant new transfer
+                        approvals to the new contract's address.</p>
                 </div>
 
                 <div className="subsection">
@@ -306,7 +344,8 @@ export default class Architecture extends React.Component<{}, {}> {
                         attributes for any supported token in the registry, including the token’s
                         address, and add new token symbols to the registry. However, like other
                         contract
-                        upgrades, these changes invoke the seven-day time-lock. In the case of token updates,
+                        upgrades, these changes invoke the seven-day time-lock. In the case of token
+                        updates,
                         it is appropriate for the applications that use Dharma Protocol (e.g. Dharma
                         Plex), to signal to their users that the token has changed.</p>
                     <p>We have audited the Dharma Protocol and found no further cases where the
