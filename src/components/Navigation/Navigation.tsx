@@ -6,7 +6,9 @@ import { Accordion, Menu, Sidebar } from "semantic-ui-react";
 import "./Navigation.css";
 
 import Classes from "./Classes";
+import ArchitectureContent from "./Sections/ArchitectureContent";
 import BasicContent from "./Sections/BasicContent";
+import FurtherReading from "./Sections/FurtherReading";
 import InstallationContent from "./Sections/InstallationContent";
 import MainConceptsContent from "./Sections/MainConceptsContent";
 
@@ -67,9 +69,11 @@ export default class Navigation extends React.Component<Props, {}> {
 
         const rootPanels = [
             { title: "Installation", content: { content: <InstallationContent />, key: "content-1" } },
-            { title: "Main Concepts", content: { content: <MainConceptsContent />, key: "content-1" } },
-            { title: "Introduction", content: { content: <BasicContent />, key: "content-2" } },
-            { title: "API Reference", content: { content: APIReferenceContent, key: "content-3" } },
+            { title: "Main Concepts", content: { content: <MainConceptsContent />, key: "content-2" } },
+            { title: "Using DharmaJS", content: { content: <BasicContent />, key: "content-3" } },
+            { title: "Architecture Overview", content: { content: <ArchitectureContent />, key: "content-4" } },
+            { title: "API Reference", content: { content: APIReferenceContent, key: "content-5" } },
+            { title: "Further Reading", content: { content: <FurtherReading />, key: "content-6" } },
         ];
 
         return (

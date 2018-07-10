@@ -11,6 +11,7 @@ import Section from "./Section/Section";
 // Component-specific style
 import "./Main.css";
 
+import Architecture from "./Architecture/Architecture";
 import Contributing from "./Contributing/Contributing";
 import DebtOrderAPI from "./DebtOrderAPI/DebtOrderAPI";
 import Interface from "./Interface/Interface";
@@ -38,6 +39,9 @@ export default class Main extends React.Component<Props, {}> {
                 <Divider />
 
                 <DebtOrderAPI/>
+                <Divider />
+
+                <Architecture/>
                 <Divider />
 
                 {
