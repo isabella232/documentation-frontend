@@ -23,6 +23,10 @@ export default class ArchitectureContent extends React.Component<{}, {}> {
                 <Menu.Item>
                     <a href="#ContractsTokenTransferProxy">TokenTransferProxy.sol</a>
                 </Menu.Item>
+
+                <Menu.Item>
+                    <a href="#UpgradeProcedure">Upgrade Procedure</a>
+                </Menu.Item>
             </div>
         );
     }

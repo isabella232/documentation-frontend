@@ -121,8 +121,7 @@ export default class MainConcepts extends React.Component<{}, {}> {
                             interest, amortization) with the potential debtor
                         </li>
                         <li>Cryptographically committing to the likelihood they ascribe to that debt
-                            relationship ending in default (process described in detail under <a
-                                href="#specification">Specification</a>)
+                            relationship ending in default
                         </li>
                         <li>Administering the debt order's funding by forwarding it to any number of
                             relayers.
