@@ -14,6 +14,7 @@ import "./Main.css";
 import Architecture from "./Architecture/Architecture";
 import Contributing from "./Contributing/Contributing";
 import DebtOrderAPI from "./DebtOrderAPI/DebtOrderAPI";
+import DeployedAddresses from "./DeployedAddresses/DeployedAddresses";
 import Interface from "./Interface/Interface";
 import Installation from "./Introduction/Installation";
 import MainConcepts from "./MainConcepts/MainConcepts";
@@ -42,6 +43,9 @@ export default class Main extends React.Component<Props, {}> {
                 <Divider />
 
                 <Architecture/>
+                <Divider />
+
+                <DeployedAddresses/>
                 <Divider />
 
                 {

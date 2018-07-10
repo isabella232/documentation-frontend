@@ -8,6 +8,7 @@ import "./Navigation.css";
 import Classes from "./Classes";
 import ArchitectureContent from "./Sections/ArchitectureContent";
 import BasicContent from "./Sections/BasicContent";
+import DeployedAddresses from "./Sections/DeployedAddresses";
 import FurtherReading from "./Sections/FurtherReading";
 import InstallationContent from "./Sections/InstallationContent";
 import MainConceptsContent from "./Sections/MainConceptsContent";
@@ -72,8 +73,9 @@ export default class Navigation extends React.Component<Props, {}> {
             { title: "Main Concepts", content: { content: <MainConceptsContent />, key: "content-2" } },
             { title: "Using DharmaJS", content: { content: <BasicContent />, key: "content-3" } },
             { title: "Architecture Overview", content: { content: <ArchitectureContent />, key: "content-4" } },
-            { title: "API Reference", content: { content: APIReferenceContent, key: "content-5" } },
-            { title: "Further Reading", content: { content: <FurtherReading />, key: "content-6" } },
+            { title: "Contract Addresses", content: { content: <DeployedAddresses />, key: "content-5" } },
+            { title: "API Reference", content: { content: APIReferenceContent, key: "content-6" } },
+            { title: "Further Reading", content: { content: <FurtherReading />, key: "content-7" } },
         ];
 
         return (
