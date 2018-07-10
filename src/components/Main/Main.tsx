@@ -15,6 +15,7 @@ import Contributing from "./Contributing/Contributing";
 import DebtOrderAPI from "./DebtOrderAPI/DebtOrderAPI";
 import Interface from "./Interface/Interface";
 import Installation from "./Introduction/Installation";
+import MainConcepts from "./MainConcepts/MainConcepts";
 import Upgrading from "./Upgrading/Upgrading";
 
 interface Props {
@@ -31,6 +32,9 @@ export default class Main extends React.Component<Props, {}> {
         return (
             <Segment basic className="MainSegment">
                 <Installation/>
+                <Divider />
+
+                <MainConcepts/>
                 <Divider />
 
                 <DebtOrderAPI/>

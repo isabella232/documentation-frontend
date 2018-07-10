@@ -6,6 +6,9 @@ import { Accordion, Menu, Sidebar } from "semantic-ui-react";
 import "./Navigation.css";
 
 import Classes from "./Classes";
+import BasicContent from "./Sections/BasicContent";
+import InstallationContent from "./Sections/InstallationContent";
+import MainConceptsContent from "./Sections/MainConceptsContent";
 
 interface Props {
     documentation: Documentation;
@@ -56,54 +59,6 @@ export default class Navigation extends React.Component<Props, {}> {
             ),
         });
 
-        const InstallationContent = (
-            <div>
-                <Menu.Item>
-                    <a href="#Installation">Installing Dharma.js</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#Import">Importing Dharma.js</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#Instantiation">Instantiating Dharma.js</a>
-                </Menu.Item>
-            </div>
-        );
-
-        const BasicContent = (
-            <div>
-                <Menu.Item>
-                    <a href="#DebtOrderAPI">Opening a Debt Order</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#DebtOrderCancel">Cancelling a Debt Order</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#DebtOrderFill">Filling a Debt Order</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#DebtOrderRepay">Making Repayments</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#DebtOrderGetRepaymentAmount">Getting Total Expected Repayment Amount</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#DebtOrderSeize">Seizing Collateral</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#DebtOrderReturn">Returning Collateral</a>
-                </Menu.Item>
-            </div>
-        );
-
         const APIReferenceContent = (
             <div>
                 <Accordion.Accordion panels={panels} />
@@ -111,8 +66,9 @@ export default class Navigation extends React.Component<Props, {}> {
         );
 
         const rootPanels = [
-            { title: "Installation", content: { content: InstallationContent, key: "content-1" } },
-            { title: "Introduction", content: { content: BasicContent, key: "content-2" } },
+            { title: "Installation", content: { content: <InstallationContent />, key: "content-1" } },
+            { title: "Main Concepts", content: { content: <MainConceptsContent />, key: "content-1" } },
+            { title: "Introduction", content: { content: <BasicContent />, key: "content-2" } },
             { title: "API Reference", content: { content: APIReferenceContent, key: "content-3" } },
         ];
 
