@@ -89,6 +89,24 @@ export default class Navigation extends React.Component<Props, {}> {
                     <Menu.Item>
                         <Method id="LoanRequestFill" name="fill" />
                     </Menu.Item>
+
+                    <Menu.Item>
+                        <Method id="LoanRequestGenerateLoan" name="generateLoan" />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method
+                            id="LoanRequestAllowCollateralTransfer"
+                            name="allowCollateralTransfer"
+                        />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method
+                            id="LoanRequestAllowPrincipalTransfer"
+                            name="allowPrincipalTransfer"
+                        />
+                    </Menu.Item>
                 </Menu>
             </Menu.Item>
         );
@@ -109,6 +127,14 @@ export default class Navigation extends React.Component<Props, {}> {
                             id="LoanGetRepaymentAmount"
                             name="getTotalExpectedRepaymentAmount"
                         />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method id="LoanGetOutstandingAmount" name="getOutstandingAmount" />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method id="LoanGetRepaidAmount" name="getRepaidAmount" />
                     </Menu.Item>
 
                     <Menu.Item>

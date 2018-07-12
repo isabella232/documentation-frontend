@@ -21,6 +21,8 @@ export default class LoanRequestAPI extends React.Component<{}, {}> {
                     LoanRequest API
                 </SemanticHeader>
 
+                {/* create */}
+
                 <ContentAnchor id="LoanRequestCreate" />
 
                 <SemanticHeader size="large">Creating a LoanRequest</SemanticHeader>
@@ -43,13 +45,17 @@ export default class LoanRequestAPI extends React.Component<{}, {}> {
 });`}
                 />
 
+                {/* cancel */}
+
                 <ContentAnchor id="LoanRequestCancel" />
 
                 <SemanticHeader size="large">Cancelling a LoanRequest</SemanticHeader>
 
                 <p>To cancel the loan request, call the `cancel` method:</p>
 
-                <Snippet lang="JS" code="const transactionHash = await loanRequest.cancel();" />
+                <Snippet lang="JS" code="const txHash = await loanRequest.cancel();" />
+
+                {/* fill */}
 
                 <ContentAnchor id="LoanRequestFill" />
 
@@ -60,7 +66,54 @@ export default class LoanRequestAPI extends React.Component<{}, {}> {
                     LoanRequest by calling the `fill` method:
                 </p>
 
-                <Snippet lang="JS" code={`const transactionHash = await loanRequest.fill();`} />
+                <Snippet lang="JS" code={`const txHash = await loanRequest.fill();`} />
+
+                {/* generateLoan */}
+
+                <ContentAnchor id="LoanRequestGenerateLoan" />
+
+                <SemanticHeader size="large">Generating a Loan</SemanticHeader>
+
+                <p>
+                    Once a loan request has been filled, you can generate an instance of the
+                    associated loan by calling the `generateLoan` method:
+                </p>
+
+                <Snippet lang="JS" code={`const loan = await loanRequest.generateLoan();`} />
+
+                {/* allowCollateralTransfer */}
+
+                <ContentAnchor id="LoanRequestAllowCollateralTransfer" />
+
+                <SemanticHeader size="large">Allow Collateral Transfer</SemanticHeader>
+
+                <p>
+                    Before a loan can be filled, the borrower will need to authorize the Dharma
+                    smart contracts to hold the collateral in escrow. This can be accomplished by
+                    calling the `allowCollateralTransfer` method:
+                </p>
+
+                <Snippet
+                    lang="JS"
+                    code={`const txHash = await loanRequest.allowCollateralTransfer();`}
+                />
+
+                {/* allowPrincipalTransfer */}
+
+                <ContentAnchor id="LoanRequestAllowPrincipalTransfer" />
+
+                <SemanticHeader size="large">Allow Principal Transfer</SemanticHeader>
+
+                <p>
+                    Before a loan can be filled, the creditor will need to authorize the Dharma
+                    smart contracts to transfer the principal to the borrower on their behalf. This
+                    can be accomplished by calling the `allowPrincipalTransfer` method:
+                </p>
+
+                <Snippet
+                    lang="JS"
+                    code={`const txHash = await loanRequest.allowPrincipalTransfer();`}
+                />
             </Container>
         );
     }

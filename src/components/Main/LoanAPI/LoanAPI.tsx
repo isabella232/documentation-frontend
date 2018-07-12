@@ -21,6 +21,8 @@ export default class LoanAPI extends React.Component<{}, {}> {
                     Loan API
                 </SemanticHeader>
 
+                {/* makeRepayment */}
+
                 <ContentAnchor id="LoanRepay" />
 
                 <SemanticHeader size="large">Making Repayments</SemanticHeader>
@@ -30,7 +32,9 @@ export default class LoanAPI extends React.Component<{}, {}> {
                     `makeRepayment` method:
                 </p>
 
-                <Snippet lang="JS" code={`const transactionHash = await loan.makeRepayment();`} />
+                <Snippet lang="JS" code={`const txHash = await loan.makeRepayment();`} />
+
+                {/* getTotalExpectedRepaymentAmount */}
 
                 <ContentAnchor id="LoanGetRepaymentAmount" />
 
@@ -48,6 +52,33 @@ export default class LoanAPI extends React.Component<{}, {}> {
                     code="const repaymentAmount = await loan.getTotalExpectedRepaymentAmount();"
                 />
 
+                {/* getOutstandingAmount */}
+
+                <ContentAnchor id="LoanGetOutstandingAmount" />
+
+                <SemanticHeader size="large">Get Outstanding Amount</SemanticHeader>
+
+                <p>
+                    Retrieve the amount outstanding on the loan by calling the
+                    `getOutstandingAmount` method:
+                </p>
+
+                <Snippet lang="JS" code="const txHash = await loan.getOutstandingAmount();" />
+
+                {/* getRepaidAmount */}
+
+                <ContentAnchor id="LoanGetRepaidAmount" />
+
+                <SemanticHeader size="large">Get Repaid Amount</SemanticHeader>
+
+                <p>
+                    Retrieve the amount repaid on the loan by calling the `getRepaidAmount` method:
+                </p>
+
+                <Snippet lang="JS" code="const txHash = await loan.getRepaidAmount();" />
+
+                {/* seizeCollateral */}
+
                 <ContentAnchor id="LoanSeize" />
 
                 <SemanticHeader size="large">Seizing Collateral</SemanticHeader>
@@ -57,7 +88,9 @@ export default class LoanAPI extends React.Component<{}, {}> {
                     repayments), the collateral becomes available for seizure by the creditor:
                 </p>
 
-                <Snippet lang="JS" code="const transactionHash = await loan.seizeCollateral();" />
+                <Snippet lang="JS" code="const txHash = await loan.seizeCollateral();" />
+
+                {/* returnCollateral */}
 
                 <ContentAnchor id="LoanReturn" />
 
@@ -65,10 +98,10 @@ export default class LoanAPI extends React.Component<{}, {}> {
 
                 <p>
                     If the debtor has repaid the total expected repayment amount, they may reclaim
-                    their collateral:
+                    their collateral by calling the `returnCollateral` method:
                 </p>
 
-                <Snippet lang="JS" code="const transactionHash = await loan.returnCollateral();" />
+                <Snippet lang="JS" code="const txHash = await loan.returnCollateral();" />
             </Container>
         );
     }
