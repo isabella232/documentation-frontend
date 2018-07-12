@@ -21,6 +21,8 @@ export default class LoanAPI extends React.Component<{}, {}> {
                     Loan API
                 </SemanticHeader>
 
+                {/* makeRepayment */}
+
                 <ContentAnchor id="LoanRepay" />
 
                 <SemanticHeader size="large">Making Repayments</SemanticHeader>
@@ -31,6 +33,8 @@ export default class LoanAPI extends React.Component<{}, {}> {
                 </p>
 
                 <Snippet lang="JS" code={`const transactionHash = await loan.makeRepayment();`} />
+
+                {/* getTotalExpectedRepaymentAmount */}
 
                 <ContentAnchor id="LoanGetRepaymentAmount" />
 
@@ -48,6 +52,8 @@ export default class LoanAPI extends React.Component<{}, {}> {
                     code="const repaymentAmount = await loan.getTotalExpectedRepaymentAmount();"
                 />
 
+                {/* seizeCollateral */}
+
                 <ContentAnchor id="LoanSeize" />
 
                 <SemanticHeader size="large">Seizing Collateral</SemanticHeader>
@@ -58,6 +64,8 @@ export default class LoanAPI extends React.Component<{}, {}> {
                 </p>
 
                 <Snippet lang="JS" code="const transactionHash = await loan.seizeCollateral();" />
+
+                {/* returnCollateral */}
 
                 <ContentAnchor id="LoanReturn" />
 
