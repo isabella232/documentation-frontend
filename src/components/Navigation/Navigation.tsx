@@ -6,6 +6,7 @@ import { Accordion, Menu, Sidebar } from "semantic-ui-react";
 import "./Navigation.css";
 
 import Classes from "./Classes";
+import Method from "./Method/Method";
 
 interface Props {
     documentation: Documentation;
@@ -30,7 +31,7 @@ export default class Navigation extends React.Component<Props, {}> {
                 title: section.title.replace(/_/g, " "),
                 content: (
                     <Accordion.Content>
-                        <Classes classes={section.classes}/>
+                        <Classes classes={section.classes} />
                     </Accordion.Content>
                 ),
             };
@@ -41,17 +42,15 @@ export default class Navigation extends React.Component<Props, {}> {
             title: "Interfaces",
             content: (
                 <Accordion.Content>
-                    {
-                        _.map(documentation.interfaces, (interfaceDoc) => {
-                            const { name } = interfaceDoc;
+                    {_.map(documentation.interfaces, (interfaceDoc) => {
+                        const { name } = interfaceDoc;
 
-                            return (
-                                <Menu.Item key={name}>
-                                    <a href={`#${name}`}>{name}</a>
-                                </Menu.Item>
-                            );
-                        })
-                    }
+                        return (
+                            <Menu.Item key={name}>
+                                <a href={`#${name}`}>{name}</a>
+                            </Menu.Item>
+                        );
+                    })}
                 </Accordion.Content>
             ),
         });
@@ -72,35 +71,87 @@ export default class Navigation extends React.Component<Props, {}> {
             </div>
         );
 
-        const BasicContent = (
+        const LoanRequestAPIContent = (
+            <Menu.Item>
+                <Menu borderless={true} vertical={true}>
+                    <Menu.Item>
+                        <a href="#LoanRequestAPI">Loan Request</a>
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method id="LoanRequestCreate" name="create" />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method id="LoanRequestCancel" name="cancel" />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method id="LoanRequestFill" name="fill" />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method id="LoanRequestGenerateLoan" name="generateLoan" />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method
+                            id="LoanRequestAllowCollateralTransfer"
+                            name="allowCollateralTransfer"
+                        />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method
+                            id="LoanRequestAllowPrincipalTransfer"
+                            name="allowPrincipalTransfer"
+                        />
+                    </Menu.Item>
+                </Menu>
+            </Menu.Item>
+        );
+
+        const LoanAPIContent = (
+            <Menu.Item>
+                <Menu borderless={true} vertical={true}>
+                    <Menu.Item>
+                        <a href="#LoanAPI">Loan</a>
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method id="LoanRepay" name="makeRepayment" />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method
+                            id="LoanGetRepaymentAmount"
+                            name="getTotalExpectedRepaymentAmount"
+                        />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method id="LoanGetOutstandingAmount" name="getOutstandingAmount" />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method id="LoanGetRepaidAmount" name="getRepaidAmount" />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method id="LoanSeize" name="seizeCollateral" />
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Method id="LoanReturn" name="returnCollateral" />
+                    </Menu.Item>
+                </Menu>
+            </Menu.Item>
+        );
+
+        const BasicReference = (
             <div>
-                <Menu.Item>
-                    <a href="#DebtOrderAPI">Opening a Debt Order</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#DebtOrderCancel">Cancelling a Debt Order</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#DebtOrderFill">Filling a Debt Order</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#DebtOrderRepay">Making Repayments</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#DebtOrderGetRepaymentAmount">Getting Total Expected Repayment Amount</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#DebtOrderSeize">Seizing Collateral</a>
-                </Menu.Item>
-
-                <Menu.Item>
-                    <a href="#DebtOrderReturn">Returning Collateral</a>
-                </Menu.Item>
+                {LoanRequestAPIContent}
+                {LoanAPIContent}
             </div>
         );
 
@@ -112,27 +163,27 @@ export default class Navigation extends React.Component<Props, {}> {
 
         const rootPanels = [
             { title: "Installation", content: { content: InstallationContent, key: "content-1" } },
-            { title: "Introduction", content: { content: BasicContent, key: "content-2" } },
+            { title: "Basic Reference", content: { content: BasicReference, key: "content-2" } },
             { title: "API Reference", content: { content: APIReferenceContent, key: "content-3" } },
         ];
 
         return (
-            <Sidebar as={Menu}
-                     className="SidebarMenu"
-                     animation="push"
-                     width="wide"
-                     visible={visible}
-                     vertical
-                     borderless={true}>
-
+            <Sidebar
+                as={Menu}
+                className="SidebarMenu"
+                animation="push"
+                width="wide"
+                visible={visible}
+                vertical
+                borderless={true}>
                 <Accordion defaultActiveIndex={1} panels={rootPanels} />
 
                 {/*<Menu.Item>*/}
-                    {/*<a href="#Contributing">Contributing to Dharma</a>*/}
+                {/*<a href="#Contributing">Contributing to Dharma</a>*/}
                 {/*</Menu.Item>*/}
 
                 {/*<Menu.Item>*/}
-                    {/*<a href="#Upgrading">Upgrade Procedures</a>*/}
+                {/*<a href="#Upgrading">Upgrade Procedures</a>*/}
                 {/*</Menu.Item>*/}
             </Sidebar>
         );
