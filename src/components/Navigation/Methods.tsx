@@ -5,6 +5,8 @@ import * as React from "react";
 // Semantic-UI components
 import { Menu } from "semantic-ui-react";
 
+import Method from "./Method/Method";
+
 // Component-specific style
 import "./Methods.css";
 
@@ -21,16 +23,12 @@ export default class Methods extends React.Component<Props, {}> {
 
         return (
             <Menu borderless={true} vertical={true} className="ClassMethods">
-                {
-                    // For each method, render a link to the documentation for that method.
-                    _.map(methods, (method) => {
-                        const name = method.name;
+                {// For each method, render a link to the documentation for that method.
+                _.map(methods, (method) => {
+                    const name = method.name;
 
-                        return (
-                            <a key={name} className="MethodName item" href={`#${name}`}>{name}</a>
-                        );
-                    })
-                }
+                    return <Method key={name} id={name} name={name} />;
+                })}
             </Menu>
         );
     }
