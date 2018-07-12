@@ -100,6 +100,13 @@ export default class Navigation extends React.Component<Props, {}> {
                             name="allowCollateralTransfer"
                         />
                     </Menu.Item>
+
+                    <Menu.Item>
+                        <Method
+                            id="LoanRequestAllowPrincipalTransfer"
+                            name="allowPrincipalTransfer"
+                        />
+                    </Menu.Item>
                 </Menu>
             </Menu.Item>
         );
