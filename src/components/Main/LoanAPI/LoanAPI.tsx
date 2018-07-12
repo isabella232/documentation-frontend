@@ -65,6 +65,18 @@ export default class LoanAPI extends React.Component<{}, {}> {
 
                 <Snippet lang="JS" code="const txHash = await loan.getOutstandingAmount();" />
 
+                {/* getRepaidAmount */}
+
+                <ContentAnchor id="LoanGetRepaidAmount" />
+
+                <SemanticHeader size="large">Get Repaid Amount</SemanticHeader>
+
+                <p>
+                    Retrieve the amount repaid on the loan by calling the `getRepaidAmount` method:
+                </p>
+
+                <Snippet lang="JS" code="const txHash = await loan.getRepaidAmount();" />
+
                 {/* seizeCollateral */}
 
                 <ContentAnchor id="LoanSeize" />
