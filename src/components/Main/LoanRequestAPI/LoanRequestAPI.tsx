@@ -80,6 +80,23 @@ export default class LoanRequestAPI extends React.Component<{}, {}> {
                 </p>
 
                 <Snippet lang="JS" code={`const loan = await loanRequest.generateLoan();`} />
+
+                {/* allowCollateralTransfer */}
+
+                <ContentAnchor id="LoanRequestAllowCollateralTransfer" />
+
+                <SemanticHeader size="large">Allow Collateral Transfer</SemanticHeader>
+
+                <p>
+                    Before a loan can be filled, the debtor will need to authorize the Dharma smart
+                    contracts to hold the collateral in escrow. This can be accomplished by calling
+                    the `allowCollateralTransfer` method:
+                </p>
+
+                <Snippet
+                    lang="JS"
+                    code={`const txHash = await loanRequest.allowCollateralTransfer();`}
+                />
             </Container>
         );
     }
