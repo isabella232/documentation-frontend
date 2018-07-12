@@ -21,6 +21,8 @@ export default class LoanRequestAPI extends React.Component<{}, {}> {
                     LoanRequest API
                 </SemanticHeader>
 
+                {/* create */}
+
                 <ContentAnchor id="LoanRequestCreate" />
 
                 <SemanticHeader size="large">Creating a LoanRequest</SemanticHeader>
@@ -43,6 +45,8 @@ export default class LoanRequestAPI extends React.Component<{}, {}> {
 });`}
                 />
 
+                {/* cancel */}
+
                 <ContentAnchor id="LoanRequestCancel" />
 
                 <SemanticHeader size="large">Cancelling a LoanRequest</SemanticHeader>
@@ -50,6 +54,8 @@ export default class LoanRequestAPI extends React.Component<{}, {}> {
                 <p>To cancel the loan request, call the `cancel` method:</p>
 
                 <Snippet lang="JS" code="const transactionHash = await loanRequest.cancel();" />
+
+                {/* fill */}
 
                 <ContentAnchor id="LoanRequestFill" />
 
@@ -61,6 +67,8 @@ export default class LoanRequestAPI extends React.Component<{}, {}> {
                 </p>
 
                 <Snippet lang="JS" code={`const transactionHash = await loanRequest.fill();`} />
+
+                {/* generateLoan */}
 
                 <ContentAnchor id="LoanRequestGenerateLoan" />
 
