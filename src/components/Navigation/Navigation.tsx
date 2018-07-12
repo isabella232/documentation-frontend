@@ -130,6 +130,10 @@ export default class Navigation extends React.Component<Props, {}> {
                     </Menu.Item>
 
                     <Menu.Item>
+                        <Method id="LoanGetOutstandingAmount" name="getOutstandingAmount" />
+                    </Menu.Item>
+
+                    <Menu.Item>
                         <Method id="LoanSeize" name="seizeCollateral" />
                     </Menu.Item>
 
