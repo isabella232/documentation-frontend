@@ -86,7 +86,7 @@ export default class LoanAPI extends React.Component<{}, {}> {
 
                 <p>
                     If the debtor has repaid the total expected repayment amount, they may reclaim
-                    their collateral:
+                    their collateral by calling the `returnCollateral` method:
                 </p>
 
                 <Snippet lang="JS" code="const txHash = await loan.returnCollateral();" />
