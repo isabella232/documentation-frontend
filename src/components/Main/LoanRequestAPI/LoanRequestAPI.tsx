@@ -53,7 +53,7 @@ export default class LoanRequestAPI extends React.Component<{}, {}> {
 
                 <p>To cancel the loan request, call the `cancel` method:</p>
 
-                <Snippet lang="JS" code="const transactionHash = await loanRequest.cancel();" />
+                <Snippet lang="JS" code="const txHash = await loanRequest.cancel();" />
 
                 {/* fill */}
 
@@ -66,7 +66,7 @@ export default class LoanRequestAPI extends React.Component<{}, {}> {
                     LoanRequest by calling the `fill` method:
                 </p>
 
-                <Snippet lang="JS" code={`const transactionHash = await loanRequest.fill();`} />
+                <Snippet lang="JS" code={`const txHash = await loanRequest.fill();`} />
 
                 {/* generateLoan */}
 
