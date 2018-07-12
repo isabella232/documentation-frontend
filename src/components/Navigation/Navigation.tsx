@@ -93,6 +93,13 @@ export default class Navigation extends React.Component<Props, {}> {
                     <Menu.Item>
                         <Method id="LoanRequestGenerateLoan" name="generateLoan" />
                     </Menu.Item>
+
+                    <Menu.Item>
+                        <Method
+                            id="LoanRequestAllowCollateralTransfer"
+                            name="allowCollateralTransfer"
+                        />
+                    </Menu.Item>
                 </Menu>
             </Menu.Item>
         );
