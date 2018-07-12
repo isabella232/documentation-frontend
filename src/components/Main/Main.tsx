@@ -12,9 +12,10 @@ import Section from "./Section/Section";
 import "./Main.css";
 
 import Contributing from "./Contributing/Contributing";
-import DebtOrderAPI from "./DebtOrderAPI/DebtOrderAPI";
 import Interface from "./Interface/Interface";
 import Installation from "./Introduction/Installation";
+import LoanAPI from "./LoanAPI/LoanAPI";
+import LoanRequestAPI from "./LoanRequestAPI/LoanRequestAPI";
 import Upgrading from "./Upgrading/Upgrading";
 
 interface Props {
@@ -30,32 +31,29 @@ export default class Main extends React.Component<Props, {}> {
 
         return (
             <Segment basic className="MainSegment">
-                <Installation/>
+                <Installation />
                 <Divider />
 
-                <DebtOrderAPI/>
+                <LoanRequestAPI />
                 <Divider />
 
-                {
-                    // For each section, render a Section component with the relevant data.
-                    _.map(documentation.sections, (section) => {
-                        return <Section
-                            key={section.title}
-                            section={section}/>;
-                    })
-                }
+                <LoanAPI />
+                <Divider />
+
+                {// For each section, render a Section component with the relevant data.
+                _.map(documentation.sections, (section) => {
+                    return <Section key={section.title} section={section} />;
+                })}
 
                 <h1>Interfaces</h1>
-                {
-                    _.map(documentation.interfaces, (interfaceDoc) => {
-                        return <Interface interfaceDoc={interfaceDoc}/>;
-                    })
-                }
+                {_.map(documentation.interfaces, (interfaceDoc) => {
+                    return <Interface interfaceDoc={interfaceDoc} />;
+                })}
 
-                <Contributing/>
+                <Contributing />
                 <Divider />
 
-                <Upgrading/>
+                <Upgrading />
                 <Divider />
             </Segment>
         );
