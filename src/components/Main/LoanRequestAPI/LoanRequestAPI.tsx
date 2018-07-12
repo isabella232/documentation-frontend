@@ -61,6 +61,17 @@ export default class LoanRequestAPI extends React.Component<{}, {}> {
                 </p>
 
                 <Snippet lang="JS" code={`const transactionHash = await loanRequest.fill();`} />
+
+                <ContentAnchor id="LoanRequestGenerateLoan" />
+
+                <SemanticHeader size="large">Generating a Loan</SemanticHeader>
+
+                <p>
+                    Once a loan request has been filled, you can generate an instance of the
+                    associated loan by calling the `generateLoan` method:
+                </p>
+
+                <Snippet lang="JS" code={`const loan = await loanRequest.generateLoan();`} />
             </Container>
         );
     }
