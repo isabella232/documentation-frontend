@@ -32,7 +32,7 @@ export default class LoanAPI extends React.Component<{}, {}> {
                     `makeRepayment` method:
                 </p>
 
-                <Snippet lang="JS" code={`const transactionHash = await loan.makeRepayment();`} />
+                <Snippet lang="JS" code={`const txHash = await loan.makeRepayment();`} />
 
                 {/* getTotalExpectedRepaymentAmount */}
 
@@ -63,7 +63,7 @@ export default class LoanAPI extends React.Component<{}, {}> {
                     repayments), the collateral becomes available for seizure by the creditor:
                 </p>
 
-                <Snippet lang="JS" code="const transactionHash = await loan.seizeCollateral();" />
+                <Snippet lang="JS" code="const txHash = await loan.seizeCollateral();" />
 
                 {/* returnCollateral */}
 
@@ -76,7 +76,7 @@ export default class LoanAPI extends React.Component<{}, {}> {
                     their collateral:
                 </p>
 
-                <Snippet lang="JS" code="const transactionHash = await loan.returnCollateral();" />
+                <Snippet lang="JS" code="const txHash = await loan.returnCollateral();" />
             </Container>
         );
     }
