@@ -63,7 +63,10 @@ export default class LoanAPI extends React.Component<{}, {}> {
                     `getOutstandingAmount` method:
                 </p>
 
-                <Snippet lang="JS" code="const txHash = await loan.getOutstandingAmount();" />
+                <Snippet
+                    lang="JS"
+                    code="const outstandingAmount = await loan.getOutstandingAmount();"
+                />
 
                 {/* getRepaidAmount */}
 
@@ -75,7 +78,7 @@ export default class LoanAPI extends React.Component<{}, {}> {
                     Retrieve the amount repaid on the loan by calling the `getRepaidAmount` method:
                 </p>
 
-                <Snippet lang="JS" code="const txHash = await loan.getRepaidAmount();" />
+                <Snippet lang="JS" code="const repaidAmount = await loan.getRepaidAmount();" />
 
                 {/* seizeCollateral */}
 
